@@ -36,11 +36,10 @@ public class FibPair {
 
         // code here to make a pair from the params
         Pair<Integer> oldPair = new Pair<Integer>(bigger,smaller);
-        Pair<Integer> newPair = new Pair<Integer>(oldPair.getFirst() + oldPair.getSecond(), oldPair.getFirst());
         System.out.println(
             "The pair after "
           + oldPair
-          + " is " + nextPairAfter( ?? the pair you made)
+          + " is " + nextPairAfter(oldPair)
           + " ...expecting " + expect
           + System.lineSeparator());
      }
@@ -54,8 +53,10 @@ public class FibPair {
         the big number is the sum of the given pair
         the small number is the the old big number
      */
-    private static ?? nextPairAfter( ??) {
-        return ?? the next pair;
+    private static Pair<Integer> nextPairAfter(Pair<Integer> oldPair ) {
+        Pair<Integer> newPair = new Pair<Integer>(oldPair.getFirst() + oldPair.getSecond(), oldPair.getFirst());
+
+        return newPair;
     }
 
 
@@ -73,6 +74,13 @@ public class FibPair {
           + System.lineSeparator());
      }
 
+     public static Integer fib(int n){
+
+          if (n == 0){
+            return 0;
+          }
+          return n + fib(n-1);
+     }
 
     /**
       Calculate a Fibonacci number recursively
@@ -82,7 +90,5 @@ public class FibPair {
       @return the nth Fibonacci number
               n >= 0
      */
-    private static Integer fib( int n) {
-        return -2;
-    }
+
 }
